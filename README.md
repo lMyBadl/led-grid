@@ -1,2 +1,6 @@
 # led-grid
-An LED grid to learn STM32 and PCB layout
+A simple PCB project of an LED grid to learn STM32 and PCB layout.
+
+# Description
+
+# Milestones
