@@ -4,10 +4,10 @@ These parts are just ones that I want to work with. They're not based off of any
 
 - STM32 MCU
 - LEDs of some sort (single color)
-- Light sensor (I2C)
-- 6 axis IMU (SPI)
-- Barometer (I2C)
-- GPS (UART)
+- 7-segment displays
+- 2 ICs that use I2C
+- 2 ICs that use SPI
+- 1 IC with UART
 - USB C
 
 ## Wants:
@@ -27,7 +27,6 @@ These are things that I think would be cool additions to the project. Once again
   - one clear button
   - one change row button
 - programmable from usb c (no debug is fine)
-- each type of serial communication in the board (I2C, SPI, UART)
 - Real Time Clock
 
 
@@ -48,6 +47,8 @@ These are requirements based off of the wants and given lists.
       - 1 save button
       - 1 clear button
       - 2 switch editing row button
+- 3 SIPO shift registers (for seven segment displays)
+  - one per each
 - MCU:
   - Has bootloader function
   - GPIO:
@@ -75,23 +76,43 @@ These are requirements based off of the wants and given lists.
 ## Parts List:
 Based off the requirements, wants, and givens lists, and the calculations, these are the parts that work.
 
-- MCU:
-  - STM32F401RET6
-    - 84 MHz Clock (15.9 FoS)
-    - 512 kB Flash
-    - 96 kB SRAM
-    - 64 Pins
-    - RTC
-- IMU:
-  - 
+- MCU: STM32F411VET6
+  - 100 MHz Clock (18.94 FoS)
+  - 512 kB Flash
+  - 128 kB SRAM
+  - 81 I/O Pins
+  - RTC
+  - Watchdog 
+  - FPU for potential calculations
+  - GPIO Voltage: 3.3V
+- IMU: BMI323
+  - 6 DoF IMU
+  - 3 axis accelerometer (16 bit): 2, 4, 8, 16 g 
+  - 3 axis gyroscope (16 bit): 125, 250, 500, 1000, 2000 deg/s
+  - temperature sensor (16 bit): -40 - 80 degC
+  - SPI communication
+- Light Sensor: VEML3235
+  - Operating voltage: 2.6 - 3.3V
+  - I2C communication
+    - I2C voltage: 1.7 - 3.6V
+  - Sensitivity from 0.0021 - 17867 lux
+  - White channel (16 bit):
+    - Raw light sensor
+  - Ambient light sensor channel (16 bit):
+    - Adjusted for human vision
+- Barometer: BMP581
+  - Operating voltage: 1.7 - 3.6V
+  - SPI and I2C
+  - Pressure (24 bit): 30 - 125 kPa
+  - Temperature (24 bit): -40 - 80 degC
+  - On chip temperature compensation
+- GNSS: MAX-M10M-20B
+  - Operating voltage: 1.76 - 5.5V
+  - I2C and UART
+  - Velocity accuracy: 0.05 m/s
+  - Heading accuracy: 0.3 deg
+  - Position accuracy: 1.5 m
+- Antenna: W2332
+  - Return loss mins at ~1575 MHz and ~1605 MHz (GNSS bands for the world)
 
 
-## Notes:
-These are notes that have to be followed to make sure that the circuitry works and some thoughts about part choices
-
-- MCU:
-  - Package: probably LFQP 64, 48 leaves only like 3 usable GPIO for future developing
-  - Since storage is cheap, go high as possible to give room for more things
-  - 
-- MOSFETs: 
-  - Loads (LEDs) are always gonnected to drain because MOSFET uses voltage difference between gate and source to determine if it turns on

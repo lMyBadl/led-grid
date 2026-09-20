@@ -1,3 +1,8 @@
+# Power:
+Part    | Max Current
+--------|-------------
+BMI323  | 790 uA
+
 # Control Loop Speed:
 Number  |   Reasoning
 --------|------------------
