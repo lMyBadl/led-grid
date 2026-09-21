@@ -8,7 +8,7 @@ These parts are just ones that I want to work with. They're not based off of any
 - 2 ICs that use I2C
 - 2 ICs that use SPI
 - 1 IC with UART
-- USB C
+- USB C 
 
 ## Wants:
 These are things that I think would be cool additions to the project. Once again no research behind them, since I'll pick the MCU based off of these wants and given requirements.
@@ -52,24 +52,24 @@ These are requirements based off of the wants and given lists.
 - MCU:
   - Has bootloader function
   - GPIO:
-    - 18 for row/col GPIO
+    - 22 for row/col GPIO
     - 3 for shift registers (daisy chained)
     - 4 pins for SPI sensors
     - 2 pins for I2C sensors
     - 4 pins for STLink and debug
     - 2 pins for USB type C bootloading
     - 2 pins for UART
-    - Sum: 21 GPIO, 1 sets SPI, 1 sets I2C, 1 set UART, 1 set differential USB, 1 set stlink debug (35) 
+    - Sum: 25 GPIO, 1 sets SPI, 1 sets I2C, 1 set UART, 1 set differential USB, 1 set stlink debug (35) 
   - Protocols:
-    - 9 timer pins
+    - 11 timer pins
     - 1 set of SPI
     - 1 set of I2C
     - 1 set UART
     - 1 set STLink/debug
     - USB 
 - MOSFETs:
-  - 9 N channel for connecting LEDs to ground 
-  - 9 P channel for connecting LEDs to power
+  - 11 N channel for connecting LEDs to ground 
+  - 11 P channel for connecting LEDs to power
 
 - Loop speed: 5.28 MHz
 
