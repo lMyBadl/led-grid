@@ -91,15 +91,12 @@ Based off the requirements, wants, and givens lists, and the calculations, these
   - 3 axis gyroscope (16 bit): 125, 250, 500, 1000, 2000 deg/s
   - temperature sensor (16 bit): -40 - 80 degC
   - SPI communication
-- Light Sensor: VEML3235
-  - Operating voltage: 2.6 - 3.3V
-  - I2C communication
-    - I2C voltage: 1.7 - 3.6V
-  - Sensitivity from 0.0021 - 17867 lux
-  - White channel (16 bit):
-    - Raw light sensor
-  - Ambient light sensor channel (16 bit):
-    - Adjusted for human vision
+- Light Sensor: VEML6030
+  - Operating Voltage: 2.5 - 3.6V
+  - I2C
+  - Lux range: 0 to 140 000
+  - 16 bit resolution
+  - ALS and White light readings
 - Barometer: BMP581
   - Operating voltage: 1.7 - 3.6V
   - SPI and I2C
