@@ -2,6 +2,8 @@
 Part    | Max Current
 --------|-------------
 BMI323  | 790 uA
+BMP581  | 260 μA
+VEML6030| 15 mA (from max power divided by operating voltage)
 
 # Control Loop Speed:
 Number  |   Reasoning

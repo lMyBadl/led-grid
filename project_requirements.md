@@ -112,4 +112,5 @@ Based off the requirements, wants, and givens lists, and the calculations, these
 - Antenna: W2332
   - Return loss mins at ~1575 MHz and ~1605 MHz (GNSS bands for the world)
 
+- Crystal: ABS07-LR-32.768KHZ-6-1-T
 
