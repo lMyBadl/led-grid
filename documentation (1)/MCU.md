@@ -15,3 +15,8 @@ External Resistor (Rext) - the external resistor which controls the power delive
 - Calculated using Rext = 1 / (2 π F CL2)
 - Now Gm_crit = 4 * (ESR + Rext) * (2 π F)^2 * (C0 + CL)^2
   - This new value needs to satisfy the ratios above for gmcrit to Gm
+
+To calculate load capacitors:
+- Typically use the same value for both sides
+- C1 = C2 = 2(CL - Cs)
+  - Cs is typically from 3-8 pF, the worse the routing is, the higher the value.
